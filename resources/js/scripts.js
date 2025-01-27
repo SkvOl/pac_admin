@@ -72,7 +72,7 @@ window.onload = function() {
             data: data,
             success: function(response){
                 console.log('cabin delete');
-                window.location = 'http://127.0.0.1/shipPreview/' + ship_id;
+                window.location = 'http://138.124.55.208/shipPreview/' + ship_id;
             }
         });
     });
@@ -91,7 +91,7 @@ window.onload = function() {
             data: data,
             success: function(response){
                 console.log('ship delete');
-                window.location = 'http://127.0.0.1/ships';
+                window.location = 'http://138.124.55.208/ships';
             }
         });
     });
