@@ -1,0 +1,1 @@
+<img src="/build/assets/logo.png" width="134" height="220" alt="lorem">

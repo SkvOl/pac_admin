@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.zoomed{
+    cursor: pointer;
+}
+
+.mass-text-in-table {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mass-text-in-table-10 {
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+select {
+    background-image: none!important;
+    background-position: right .5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.link-in-table {
+    text-decoration: none;
+    color: black;
+}
+
+.stroke-text{
+    -webkit-text-stroke:5px black;
+    -webkit-text-fill-color:transparent;
+}
+
+.td-spec {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.my-img-wrap {
+    position: relative;
+}
+
+.my-img-wrap .my-delete-icon {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    z-index: 100;
+}
+
+.collapse {
+    visibility: unset
+}
+
+.gal{
+    border-radius: 1%;
+}

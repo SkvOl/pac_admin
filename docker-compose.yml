@@ -1,0 +1,67 @@
+services:
+  pac_admin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pac_admin
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: pac_admin
+      SERVICE_TAGS: dev
+    depends_on:
+      - db
+    working_dir: /var/www/pac_admin
+    volumes: 
+      - .:/var/www/pac_admin
+    networks:
+      - pac_admin-net
+
+  pac_admin_webserver:
+    image: nginx:alpine
+    container_name: pac_admin_webserver
+    restart: unless-stopped
+    tty: true
+    depends_on:
+      - pac_admin
+    ports:
+      - "80:80"
+    volumes:
+      - '.:/var/www/pac_admin'
+      - './nginx:/etc/nginx/conf.d'
+    networks:
+      - pac_admin-net
+
+  db:
+    image: mariadb:10.11
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: SkvOl9
+    container_name: db
+    ports:
+      - 3306:3306
+    networks:
+      pac_admin-net:
+        ipv4_address: 172.21.0.3
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    container_name: phpmyadmin
+    depends_on:
+      - db
+    ports:
+      - 81:80
+    environment:
+      - PMA_ARBITRARY=1
+    networks:
+      - 'pac_admin-net'
+
+
+networks:
+  pac_admin-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.21.0.0/16
+          gateway: 172.21.0.1
