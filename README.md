@@ -15,4 +15,4 @@
 ![image](https://github.com/user-attachments/assets/c43f25ef-59f0-4065-826c-a21d5cba7e5b)
 
 
-Спасибо за вниманий!
+Спасибо за внимание!
