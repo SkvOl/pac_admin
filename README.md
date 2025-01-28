@@ -15,8 +15,6 @@
 ![image](https://github.com/user-attachments/assets/c43f25ef-59f0-4065-826c-a21d5cba7e5b)
 
 По адресу http://138.124.55.208:81 развёрнута phpmyadmin. <br>
-login=root<br>
-password=SkvOl9<br>
 
 
 
