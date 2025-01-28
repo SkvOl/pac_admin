@@ -51,7 +51,7 @@ class ImageController extends Controller
             }         
         });
         
-        return true;
+        return ['status' => 'Successfully'];
     }
 
     /**
